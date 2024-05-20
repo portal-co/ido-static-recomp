@@ -1,0 +1,4 @@
+load("//:rule.bzl","ido_binary")
+package(default_visibility = ["//visibility:public"])
+
+[ido_binary(name = x + "_recomp",srcbin = x,conservative = x == "ugen",stdlib = "//:libc_impl_53") for x in ['acpp', 'as0', 'as1', 'cfe', 'copt', 'ugen', 'ujoin', 'uld', 'umerge', 'uopt', 'usplit', 'ld', 'upas']]

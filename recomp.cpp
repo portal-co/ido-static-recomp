@@ -453,6 +453,7 @@ void disassemble(void) {
     RabbitizerConfig_Cfg.misc.omit0XOnSmallImm = true;
     RabbitizerConfig_Cfg.misc.opcodeLJust -= 8;
     RabbitizerConfig_Cfg.misc.upperCaseImm = false;
+    RabbitizerConfig_Cfg.pseudos.pseudoNeg = false;
     insns.reserve(1 + text_section_len / sizeof(uint32_t)); // +1 for dummy instruction
 
     for (i = 0; i < text_section_len; i += sizeof(uint32_t)) {

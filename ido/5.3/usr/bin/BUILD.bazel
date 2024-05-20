@@ -1,0 +1,5 @@
+load("//:rule.bzl","ido_binary")
+package(default_visibility = ["//visibility:public"])
+
+ido_binary(name = "cc_recomp",srcbin = "cc",conservative = False,stdlib = "//:libc_impl_53")
+ido_binary(name = "strip_recomp",srcbin = "strip",conservative = False,stdlib = "//:libc_impl_53")

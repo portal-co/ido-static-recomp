@@ -6,7 +6,35 @@ cc_binary(
         "elf.h",
         "recomp.cpp",
     ],
-    deps = ["@rabbitizer"],
     copts = ["--std=c++2a"],
-    linkopts = ["-ldl"]
+    linkopts = ["-ldl"],
+    deps = ["@rabbitizer"],
+)
+
+cc_library(
+    name = "libc_impl_53",
+    srcs = [
+        "libc_impl.c",
+        "version_info.c",
+    ],
+    hdrs = [
+        "header.h",
+        "helpers.h",
+        "libc_impl.h",
+    ],
+    defines = ["IDO53"],
+)
+
+cc_library(
+    name = "libc_impl_71",
+    srcs = [
+        "libc_impl.c",
+        "version_info.c",
+    ],
+    hdrs = [
+        "header.h",
+        "helpers.h",
+        "libc_impl.h",
+    ],
+    defines = ["IDO71"],
 )

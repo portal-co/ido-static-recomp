@@ -1,0 +1,4 @@
+load("//:rule.bzl","ido_binary")
+package(default_visibility = ["//visibility:public"])
+
+ido_binary(name = "c++filt_recomp",srcbin = "c++filt",conservative = False,stdlib = "//:libc_impl_53")
