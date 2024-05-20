@@ -1,0 +1,12 @@
+package(default_visibility = ["//visibility:public"])
+
+cc_binary(
+    name = "recomp",
+    srcs = [
+        "elf.h",
+        "recomp.cpp",
+    ],
+    deps = ["@rabbitizer"],
+    copts = ["--std=c++2a"],
+    linkopts = ["-ldl"]
+)

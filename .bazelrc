@@ -1,0 +1,4 @@
+common --experimental_enable_bzlmod
+common --registry https://bcr.bazel.build
+common --registry=https://gitlab.arm.com/bazel/rules_gzip/-/releases/v1.0.0-alpha.1/downloads
+common --registry=https://raw.githubusercontent.com/portal-co/registry/main

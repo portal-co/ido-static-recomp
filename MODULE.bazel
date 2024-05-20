@@ -1,0 +1,11 @@
+module(name = "ido-static-recomp")
+bazel_dep(name = "rabbitizer", version = "1.10.4")
+bazel_dep(name = "rules_rust", version = "0.44.0")
+
+rust = use_extension("@rules_rust//rust:extensions.bzl", "rust")
+rust.toolchain(
+    edition = "2021",
+    versions = ["1.78.0"],
+)
+use_repo(rust, "rust_toolchains")
+register_toolchains("@rust_toolchains//:all", dev_dependency = True)
